@@ -7,7 +7,7 @@ import JoinButtonWithForm from '@/components/join-button';
 
 export default function Home() {
   return (
-    <main className='py-8 px-12'>
+    <main className='py-6 px-12'>
       <Nav />
       <section className='flex flex-col items-center gap-6 py-20 text-center '>
         {/* <p className='text-5xl font-bold text-foreground leading-[60px]	'>

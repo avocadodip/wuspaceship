@@ -32,10 +32,10 @@ export default function People() {
             <div className="flex gap-3">
             Chris Chen
             <Badge variant='outline'>
-                <p className='text-muted-foreground'>2026</p>
+                <p className='font-medium text-muted-foreground'>2026</p>
               </Badge>
               <Badge variant='outline'>
-                <p className='text-muted-foreground'>CS</p>
+                <p className='font-medium text-muted-foreground'>CS</p>
               </Badge>
             </div>
 
@@ -76,10 +76,10 @@ export default function People() {
             <div className="flex gap-3">
             Fred Hua
             <Badge variant='outline'>
-                <p className='text-muted-foreground'>2025</p>
+                <p className='font-medium text-muted-foreground'>2025</p>
               </Badge>
               <Badge variant='outline'>
-                <p className='text-muted-foreground'>BUCS</p>
+                <p className='font-medium text-muted-foreground'>BUCS</p>
               </Badge>
             </div>
 
