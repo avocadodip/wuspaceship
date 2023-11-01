@@ -102,7 +102,7 @@ export default function JoinButtonWithForm() {
               Twitter
             </Label>
             <Input
-              id='twitter'
+              id='email'
               value={formData.email}
               onChange={handleChange}
               className='col-span-4'

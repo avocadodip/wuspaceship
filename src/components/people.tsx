@@ -2,6 +2,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableCaption,
   TableHead,
   TableHeader,
   TableRow,
@@ -59,6 +60,7 @@ export default function People() {
 
   return (
     <Table>
+      {/* <TableCaption>Last updated: {lastUpdated}.</TableCaption> */}
       <TableHeader>
         <TableRow>
           <TableHead className='w-[300px]'>Name</TableHead>
