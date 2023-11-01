@@ -1,4 +1,6 @@
-import { Button } from "@/components/ui/button"
+'use client';
+
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -7,57 +9,117 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { useState } from 'react';
+import { useToast } from '@/components/ui/use-toast';
 
 export default function JoinButtonWithForm() {
+  const { toast } = useToast();
+
+  const [formData, setFormData] = useState({
+    name: 'Andrew Martin',
+    email: 'amartin@wustl.edu',
+    link: 'google.com',
+  });
+
+  const handleChange = (e: any) => {
+    const { id, value } = e.target;
+    setFormData({
+      ...formData,
+      [id]: value,
+    });
+  };
+
+  const handleSubmit = async () => {
+    let isValid = true;
+    console.log(formData.name.trim());
+    if (
+      formData.name.trim() == '' ||
+      formData.email.trim() == '' ||
+      formData.link.trim() == ''
+    ) {
+      isValid = false;
+      console.error('All fields are required');
+      toast({
+        title: 'Uh oh! Something went wrong.',
+        description: 'All fields are required.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    toast({
+      description: 'Submitted!',
+    });
+
+    try {
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbzW5Bz2c-5J9rKju1N1_183OI3HVxUEQ2qya182IX6MsVPs5tQasiaRYYs4TdAEoMA_/exec',
+        {
+          method: 'POST',
+          mode: 'no-cors', // Important for CORS issues
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      console.log('Response:', response); // Log the response
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
-      <Button variant="outline">Tell us what you&apos;re building!</Button>
+        <Button variant='outline'>Tell us what you&apos;re building!</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle className="mb-1 mt-1">Join Us</DialogTitle>
-          <DialogDescription >
-            Share a link of what you&apos;re working on
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-5 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
+      <DialogContent className='sm:max-w-[425px]'>
+        <div className='mt-5 grid gap-4 py-4'>
+          <div className='grid grid-cols-5 items-center gap-4'>
+            <Label htmlFor='name' className='text-right'>
               Name
             </Label>
             <Input
-              id="name"
-              defaultValue="Andrew Martin"
-              className="col-span-4"
+              id='name'
+              value={formData.name}
+              onChange={handleChange}
+              className='col-span-4'
             />
           </div>
-          <div className="grid grid-cols-5 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
+          <div className='grid grid-cols-5 items-center gap-4'>
+            <Label htmlFor='name' className='text-right'>
               Email
             </Label>
             <Input
-              id="name"
-              defaultValue="amartin@wustl.edu"
-              className="col-span-4"
+              id='email'
+              value={formData.email}
+              onChange={handleChange}
+              className='col-span-4'
             />
           </div>
-          <div className="grid grid-cols-5 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
+          <div className='grid grid-cols-5 items-center gap-4'>
+            <Label htmlFor='username' className='text-right'>
               Link
             </Label>
             <Input
-              id="username"
-              defaultValue="google.com"
-              className="col-span-4"
+              id='link'
+              value={formData.link}
+              onChange={handleChange}
+              className='col-span-4'
             />
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Submit</Button>
+          <DialogTrigger asChild>
+            <Button type='submit' onClick={handleSubmit}>
+              Submit
+            </Button>
+          </DialogTrigger>
         </DialogFooter>
       </DialogContent>
     </Dialog>

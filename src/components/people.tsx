@@ -28,17 +28,16 @@ export default function People() {
       </TableHeader>
       <TableBody>
         <TableRow>
-        <TableCell>
-            <div className="flex gap-3">
-            Chris Chen
-            <Badge variant='outline'>
+          <TableCell>
+            <div className='flex gap-3'>
+              Chris Chen
+              <Badge variant='outline'>
                 <p className='font-medium text-muted-foreground'>2026</p>
               </Badge>
               <Badge variant='outline'>
                 <p className='font-medium text-muted-foreground'>CS</p>
               </Badge>
             </div>
-
           </TableCell>
 
           <TableCell>
@@ -65,26 +64,25 @@ export default function People() {
               rel='noopener noreferrer'
               className={buttonVariants({ size: 'icon', variant: 'ghost' })}
             >
-              <p className="text-muted-foreground">
-              <TwitterIcon />
-              </p>            </Link>
+              <p className='text-muted-foreground'>
+                <TwitterIcon />
+              </p>{' '}
+            </Link>
           </TableCell>
         </TableRow>
 
         <TableRow className='items-center'>
           <TableCell>
-            <div className="flex gap-3">
-            Fred Hua
-            <Badge variant='outline'>
+            <div className='flex gap-3'>
+              Fred Hua
+              <Badge variant='outline'>
                 <p className='font-medium text-muted-foreground'>2025</p>
               </Badge>
               <Badge variant='outline'>
                 <p className='font-medium text-muted-foreground'>BUCS</p>
               </Badge>
             </div>
-
           </TableCell>
-
 
           {/* BUILDING */}
           <TableCell></TableCell>
@@ -97,8 +95,8 @@ export default function People() {
               rel='noopener noreferrer'
               className={buttonVariants({ size: 'icon', variant: 'ghost' })}
             >
-              <p className="text-muted-foreground">
-              <TwitterIcon />
+              <p className='text-muted-foreground'>
+                <TwitterIcon />
               </p>
             </Link>
           </TableCell>
