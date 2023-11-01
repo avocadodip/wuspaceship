@@ -38,7 +38,7 @@ all-in{" "}
       <People />
 
       <section className='mb-16 mt-12 flex flex-col items-center gap-3'>
-        <p className='text-xs sm:text-sm text-muted-foreground'>Interested?</p>
+        <p className='text-sm text-muted-foreground'>Interested?</p>
         <JoinButtonWithForm />
       </section>
     </main>
