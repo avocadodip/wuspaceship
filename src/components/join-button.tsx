@@ -20,7 +20,7 @@ export default function JoinButtonWithForm() {
 
   const [formData, setFormData] = useState({
     name: 'Andrew Martin',
-    email: '@amartin_tweets',
+    email: '@WashUChancellor',
     link: 'google.com',
   });
 
