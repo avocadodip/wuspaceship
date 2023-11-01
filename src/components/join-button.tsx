@@ -80,7 +80,7 @@ export default function JoinButtonWithForm() {
       </DialogTrigger>
       <DialogContent className='max-w-[350px] sm:max-w-[450px]'>
         <DialogHeader>
-          <DialogTitle>Not on Twitter?</DialogTitle>
+          <DialogTitle>Yes, Twitter 😎</DialogTitle>
           <DialogDescription className='mt-5 '>
             Go make one — you&apos;re missing out.
           </DialogDescription>
