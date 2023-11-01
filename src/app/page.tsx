@@ -23,7 +23,7 @@ all-in{" "}
           🚀
         </p> */}
         <p className='text-[43px] font-bold leading-[60px] text-foreground	'>
-          A network going{' '}
+          The network going{' '}
           <span className='bg-gradient-to-r from-red-400 via-orange-500 to-yellow-600 bg-clip-text text-transparent'>
             all-in <br />
           </span>

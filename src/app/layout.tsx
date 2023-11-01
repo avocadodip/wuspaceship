@@ -21,9 +21,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='system'>
-        <Nav />
+          <Nav />
           {children}
-        <Toaster />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

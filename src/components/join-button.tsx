@@ -20,7 +20,7 @@ export default function JoinButtonWithForm() {
 
   const [formData, setFormData] = useState({
     name: 'Andrew Martin',
-    email: 'amartin@wustl.edu',
+    email: '@amartin_tweets',
     link: 'google.com',
   });
 
@@ -43,7 +43,7 @@ export default function JoinButtonWithForm() {
       isValid = false;
       console.error('All fields are required');
       toast({
-        title: 'Uh oh! Something went wrong.',
+        title: "Uh oh! Something's missing.",
         description: 'All fields are required.',
         variant: 'destructive',
       });
@@ -78,8 +78,14 @@ export default function JoinButtonWithForm() {
       <DialogTrigger asChild>
         <Button variant='outline'>Tell us what you&apos;re building!</Button>
       </DialogTrigger>
-      <DialogContent className='sm:max-w-[425px]'>
-        <div className='mt-5 grid gap-4 py-4'>
+      <DialogContent className='sm:max-w-[450px]'>
+        <DialogHeader>
+          <DialogTitle>Not on Twitter?</DialogTitle>
+          <DialogDescription className='mt-5 '>
+            You're missing out. Go make an account.
+          </DialogDescription>
+        </DialogHeader>
+        <div className='grid gap-4 py-4'>
           <div className='grid grid-cols-5 items-center gap-4'>
             <Label htmlFor='name' className='text-right'>
               Name
@@ -93,18 +99,18 @@ export default function JoinButtonWithForm() {
           </div>
           <div className='grid grid-cols-5 items-center gap-4'>
             <Label htmlFor='name' className='text-right'>
-              Email
+              Twitter
             </Label>
             <Input
-              id='email'
+              id='twitter'
               value={formData.email}
               onChange={handleChange}
               className='col-span-4'
             />
           </div>
           <div className='grid grid-cols-5 items-center gap-4'>
-            <Label htmlFor='username' className='text-right'>
-              Link
+            <Label htmlFor='username' className='text-right  leading-5'>
+              Project Link
             </Label>
             <Input
               id='link'
