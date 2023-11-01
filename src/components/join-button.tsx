@@ -82,7 +82,7 @@ export default function JoinButtonWithForm() {
         <DialogHeader>
           <DialogTitle>Not on Twitter?</DialogTitle>
           <DialogDescription className='mt-5 '>
-            You're missing out. Go make an account.
+            You&apos;re missing out. Go make an account.
           </DialogDescription>
         </DialogHeader>
         <div className='grid gap-4 py-4'>
