@@ -1,8 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { ModeToggle } from '@/components/ui/toggle-mode';
 import AtIcon from '@/icons/at-icon';
+import TwitterIcon from '@/icons/twitter-logo';
 import Image from 'next/image';
-
+import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/button';
+import GithubIcon
+ from '@/icons/github-logo';
 export default function Nav() {
   return (
     <main
@@ -20,7 +24,17 @@ export default function Nav() {
         </span>
         <span className='text-default'>@ WashU</span>
       </h1>
+      <div className="flex flex-row gap-3 items-center">
+      <Link
+        href='https://github.com/avocadodip/wuspaceship'
+        target='_blank'
+        rel='noopener noreferrer'
+        className={buttonVariants({ size: 'icon', variant: 'ghost' })}
+      >
+          <GithubIcon />
+      </Link>
       <ModeToggle />
+      </div>
     </main>
   );
 }
