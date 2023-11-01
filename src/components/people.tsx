@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -33,7 +32,9 @@ export default function People() {
       name: 'Chris Chen',
       year: '2026',
       major: 'CS',
+      interests: 'Product Design, AI/ML, XR',
       joined: 'September, 2023',
+      avatar: '/spaceship.png',
       projects: [
         {
           name: 'Pledge',
@@ -42,13 +43,14 @@ export default function People() {
         },
         // Add more projects here
       ],
-      twitter: 'https://twitter.com/avocadodip',
-    },
+      twitter: 'https://twitter.com/avocadodip',    },
     {
       name: 'Fred Hua',
       year: '2025',
       major: 'BUCS',
+      interests: '',
       joined: 'September, 2023',
+      avatar: '/spaceship.png',
       projects: [],
       twitter: 'https://twitter.com/FredHua03',
     },
@@ -75,16 +77,18 @@ export default function People() {
                   <Button variant='link'>{person.name}</Button>
                 </HoverCardTrigger>
                 <HoverCardContent className='w-80'>
-                  <div className='flex justify-between space-x-4'>
+                  <div className='flex space-x-4'>
                     <Avatar>
-                      <AvatarImage src='https://github.com/vercel.png' />
+                      <AvatarImage src={person.avatar} />
                       <AvatarFallback>VC</AvatarFallback>
                     </Avatar>
                     <div className='space-y-1'>
                       <h4 className='text-sm font-semibold'>{person.name}</h4>
-                      <p className='text-sm'>
-                        The React Framework – created and maintained by @vercel.
+                      {person.interests && (
+                      <p className='text-xs'>
+                        Interests: {person.interests} 
                       </p>
+                      )}
                       <div className='flex items-center pt-2'>
                         <CalendarDays className='mr-2 h-4 w-4 opacity-70' />{' '}
                         <span className='text-xs text-muted-foreground'>
