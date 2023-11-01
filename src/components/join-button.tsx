@@ -76,9 +76,11 @@ export default function JoinButtonWithForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant='outline'>Tell us what you&apos;re building!</Button>
+        <Button variant='outline'>
+          <p className="text-xs sm:text-sm">Tell us what you&apos;re building!</p>
+          </Button>
       </DialogTrigger>
-      <DialogContent className='sm:max-w-[450px]'>
+      <DialogContent className='max-w-[350px] sm:max-w-[450px]'>
         <DialogHeader>
           <DialogTitle>Not on Twitter?</DialogTitle>
           <DialogDescription className='mt-5 '>

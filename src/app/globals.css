@@ -65,3 +65,23 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Always show scrollbar for smaller screens */
+@media (max-width: 767px) {
+
+  /* For Webkit browsers like Chrome and Safari */
+  [data-scrollbar]::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+  }
+  [data-scrollbar]::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+  }
+  /* For Firefox */
+  [data-scrollbar] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+  }
+}

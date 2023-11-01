@@ -8,7 +8,7 @@ import JoinButtonWithForm from '@/components/join-button';
 
 export default function Home() {
   return (
-    <main className='px-12 pb-4'>
+    <main className='px-4 md:px-12 pb-4'>
       <section className='flex flex-col items-center gap-6 py-20 text-center '>
         {/* <p className='text-5xl font-bold text-foreground leading-[60px]	'>
           Going{" "}
@@ -22,7 +22,7 @@ all-in{" "}
           </span> 
           🚀
         </p> */}
-        <p className='text-[43px] font-bold leading-[60px] text-foreground	'>
+        <p className='text-3xl md:text-[43px] font-bold leading-[43px] md:leading-[60px] text-foreground	'>
           The network going{' '}
           <span className='bg-gradient-to-r from-red-400 via-orange-500 to-yellow-600 bg-clip-text text-transparent'>
             all-in <br />
@@ -38,7 +38,7 @@ all-in{" "}
       <People />
 
       <section className='mb-16 mt-12 flex flex-col items-center gap-3'>
-        <p className='text-sm text-muted-foreground'>Interested?</p>
+        <p className='text-xs sm:text-sm text-muted-foreground'>Interested?</p>
         <JoinButtonWithForm />
       </section>
     </main>

@@ -59,24 +59,25 @@ export default function People() {
   ];
 
   return (
-    <Table>
-      {/* <TableCaption>Last updated: {lastUpdated}.</TableCaption> */}
+    <Table className="text-xs md:text-sm">
       <TableHeader>
         <TableRow>
-          <TableHead className='w-[300px]'>Name</TableHead>
+          <TableHead className='w-[200px] md:w-[300px]'>Name</TableHead>
           <TableHead>Building</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody>
+      <TableBody >
         {peopleData.map((person, index) => (
-          <TableRow key={index}>
+          <TableRow key={index} >
             {/* NAME */}
             <TableCell>
-              <div className='flex gap-3'>
+              <div className='flex gap-1 md:gap-3 items-center'>
 
               <HoverCard>
                 <HoverCardTrigger asChild>
-                  <Button variant='link'>{person.name}</Button>
+                  <Button variant='link'>
+                    <p className="text-xs md:text-sm">{person.name}</p>
+                    </Button>
                 </HoverCardTrigger>
                 <HoverCardContent className='w-80'>
                   <div className='flex space-x-4'>
@@ -101,12 +102,12 @@ export default function People() {
                   </div>
                 </HoverCardContent>
               </HoverCard>
-                <Badge variant='outline'>
+                <Badge variant='outline' className="max-h-8">
                   <p className='font-medium text-muted-foreground'>
                     {person.year}
                   </p>
                 </Badge>
-                <Badge variant='outline'>
+                <Badge variant='outline' className="max-h-8">
                   <p className='font-medium text-muted-foreground'>
                     {person.major}
                   </p>
@@ -118,17 +119,17 @@ export default function People() {
             {/* PROJECTS */}
             <TableCell>
               {person.projects.map((project, projectIndex) => (
-                <div className='flex gap-2' key={projectIndex}>
+                <div className='flex items-center gap-2 max-h-8' key={projectIndex}>
                   <Link
                     href={project.link}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className={badgeVariants({ variant: 'default' })}
+                    className={badgeVariants({ variant: 'default'})}
                   >
                     {project.name}
                     <ArrowUpRightIcon />
                   </Link>
-                  <p className='text-muted-foreground'>{project.description}</p>
+                  <p className='text-muted-foreground min-w-[300px]'>{project.description}</p>
                 </div>
               ))}
             </TableCell>

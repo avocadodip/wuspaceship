@@ -12,11 +12,11 @@ export default function Nav() {
     <main
       style={{
         background: 'rgba(255, 255, 255, 0.01)',
-        backdropFilter: 'blur(3px)',
-        WebkitBackdropFilter: 'blur(3px)',
-        border: '1px solid rgba(255, 255, 255, 0.18)',
+        backdropFilter: 'blur(5px)',
+        WebkitBackdropFilter: 'blur(5px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.18)',
       }}
-      className='sticky top-0 z-50 flex items-center justify-between px-12 pb-4 pt-4'
+      className='sticky top-0 z-50 flex items-center justify-between px-4 md:px-12 py-2 md:py-4'
     >
       <h1 className='text-lg font-[625]'>
         <span className='bg-gradient-to-r from-blue-400 via-blue-500 to-purple-400 bg-clip-text text-transparent'>
