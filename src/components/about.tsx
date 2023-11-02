@@ -10,12 +10,12 @@ import {
 export default function About() {
   return (
     <main className='mt-20 flex flex-col'>
-      <h1 className='mb-4 text-center text-3xl font-[625]'>What we do</h1>
+      <h1 className='mb-4 text-center text-2xl sm:text-3xl font-[625]'>What we do</h1>
 
       <div className='flex flex-col sm:flex-row w-full justify-between gap-4'>
         <Card className='w-full'>
           <CardHeader>
-            <CardTitle className='text-3xl'>
+            <CardTitle className='text-2xl sm:text-3xl'>
               <span className='bg-gradient-to-r   from-blue-500 via-blue-400 to-blue-300 bg-clip-text text-transparent'>
                 Gtfol
               </span>
@@ -30,7 +30,7 @@ export default function About() {
 
         <Card className='w-full'>
           <CardHeader>
-            <CardTitle className='text-3xl'>
+            <CardTitle className='text-2xl sm:text-3xl'>
               {' '}
               <span className='bg-gradient-to-r from-orange-500 via-orange-400 to-orange-300    bg-clip-text text-transparent'>
                 Learn
@@ -45,7 +45,7 @@ export default function About() {
 
         <Card className='w-full'>
           <CardHeader>
-            <CardTitle className='text-3xl'>
+            <CardTitle className='text-2xl sm:text-3xl'>
               {' '}
               <span className='bg-gradient-to-r from-purple-500 via-purple-400 to-purple-300 bg-clip-text text-transparent'>
                 Travel
