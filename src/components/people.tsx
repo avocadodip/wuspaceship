@@ -44,7 +44,8 @@ export default function People() {
         },
         // Add more projects here
       ],
-      twitter: 'https://twitter.com/avocadodip',    },
+      twitter: 'https://twitter.com/avocadodip',
+    },
     {
       name: 'Fred Hua',
       year: '2025',
@@ -59,55 +60,54 @@ export default function People() {
   ];
 
   return (
-    <Table className="text-xs md:text-sm">
+    <Table className='text-xs md:text-sm'>
       <TableHeader>
         <TableRow>
           <TableHead className='w-[200px] md:w-[300px]'>Name</TableHead>
           <TableHead>Building</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody >
+      <TableBody>
         {peopleData.map((person, index) => (
-          <TableRow key={index} >
+          <TableRow key={index}>
             {/* NAME */}
             <TableCell>
-              <div className='flex gap-1 md:gap-3 items-center'>
-
-              <HoverCard>
-                <HoverCardTrigger asChild>
-                  <Button variant='link'>
-                    <p className="text-xs md:text-sm">{person.name}</p>
+              <div className='flex items-center gap-1 md:gap-3'>
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <Button variant='link'>
+                      <p className='text-xs md:text-sm'>{person.name}</p>
                     </Button>
-                </HoverCardTrigger>
-                <HoverCardContent className='w-80'>
-                  <div className='flex space-x-4'>
-                    <Avatar>
-                      <AvatarImage src={person.avatar} />
-                      <AvatarFallback>VC</AvatarFallback>
-                    </Avatar>
-                    <div className='space-y-1'>
-                      <h4 className='text-sm font-semibold'>{person.name}</h4>
-                      {person.interests && (
-                      <p className='text-xs'>
-                        Interests: {person.interests} 
-                      </p>
-                      )}
-                      <div className='flex items-center pt-2'>
-                        <CalendarDays className='mr-2 h-4 w-4 opacity-70' />{' '}
-                        <span className='text-xs text-muted-foreground'>
-                          Joined {person.joined}
-                        </span>
+                  </HoverCardTrigger>
+                  <HoverCardContent className='w-80'>
+                    <div className='flex space-x-4'>
+                      <Avatar>
+                        <AvatarImage src={person.avatar} />
+                        <AvatarFallback>VC</AvatarFallback>
+                      </Avatar>
+                      <div className='space-y-1'>
+                        <h4 className='text-sm font-semibold'>{person.name}</h4>
+                        {person.interests && (
+                          <p className='text-xs'>
+                            Interests: {person.interests}
+                          </p>
+                        )}
+                        <div className='flex items-center pt-2'>
+                          <CalendarDays className='mr-2 h-4 w-4 opacity-70' />{' '}
+                          <span className='text-xs text-muted-foreground'>
+                            Joined {person.joined}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
-                <Badge variant='outline' className="max-h-8">
+                  </HoverCardContent>
+                </HoverCard>
+                <Badge variant='outline' className='max-h-8'>
                   <p className='font-medium text-muted-foreground'>
                     {person.year}
                   </p>
                 </Badge>
-                <Badge variant='outline' className="max-h-8">
+                <Badge variant='outline' className='max-h-8'>
                   <p className='font-medium text-muted-foreground'>
                     {person.major}
                   </p>
@@ -115,21 +115,25 @@ export default function People() {
               </div>
             </TableCell>
 
-
             {/* PROJECTS */}
             <TableCell>
               {person.projects.map((project, projectIndex) => (
-                <div className='flex items-center gap-2 max-h-8' key={projectIndex}>
+                <div
+                  className='flex max-h-8 items-center gap-2'
+                  key={projectIndex}
+                >
                   <Link
                     href={project.link}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className={badgeVariants({ variant: 'default'})}
+                    className={badgeVariants({ variant: 'default' })}
                   >
                     {project.name}
                     <ArrowUpRightIcon />
                   </Link>
-                  <p className='text-muted-foreground min-w-[300px]'>{project.description}</p>
+                  <p className='min-w-[300px] text-muted-foreground'>
+                    {project.description}
+                  </p>
                 </div>
               ))}
             </TableCell>

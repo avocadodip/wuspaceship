@@ -5,8 +5,7 @@ import TwitterIcon from '@/icons/twitter-logo';
 import Image from 'next/image';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
-import GithubIcon
- from '@/icons/github-logo';
+import GithubIcon from '@/icons/github-logo';
 export default function Nav() {
   return (
     <main
@@ -16,7 +15,7 @@ export default function Nav() {
         WebkitBackdropFilter: 'blur(5px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.18)',
       }}
-      className='sticky top-0 z-50 flex items-center justify-between px-4 md:px-12 py-2 md:py-4'
+      className='sticky top-0 z-50 flex items-center justify-between px-4 py-2 md:px-12 md:py-4'
     >
       <h1 className='text-lg font-[625]'>
         <span className='bg-gradient-to-r from-blue-400 via-blue-500 to-purple-400 bg-clip-text text-transparent'>
@@ -24,16 +23,16 @@ export default function Nav() {
         </span>
         <span className='text-default'>@ WashU</span>
       </h1>
-      <div className="flex flex-row gap-3 items-center">
-      <Link
-        href='https://github.com/avocadodip/wuspaceship'
-        target='_blank'
-        rel='noopener noreferrer'
-        className={buttonVariants({ size: 'icon', variant: 'ghost' })}
-      >
+      <div className='flex flex-row items-center gap-3'>
+        <Link
+          href='https://github.com/avocadodip/wuspaceship'
+          target='_blank'
+          rel='noopener noreferrer'
+          className={buttonVariants({ size: 'icon', variant: 'ghost' })}
+        >
           <GithubIcon />
-      </Link>
-      <ModeToggle />
+        </Link>
+        <ModeToggle />
       </div>
     </main>
   );

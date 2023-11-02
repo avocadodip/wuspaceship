@@ -76,7 +76,7 @@ export default function JoinButtonWithForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant='outline'>Tell us what you&apos;re building!</Button>
+        <Button variant='default'>Tell us what you&apos;re building!</Button>
       </DialogTrigger>
       <DialogContent className='max-w-[350px] sm:max-w-[450px]'>
         <DialogHeader>
@@ -86,37 +86,33 @@ export default function JoinButtonWithForm() {
           </DialogDescription>
         </DialogHeader>
         <div className='grid gap-4 py-4'>
-          <div className='grid grid-cols-5 items-center gap-4'>
-            <Label htmlFor='name' className='text-right'>
-              Name
-            </Label>
+          <div className='grid grid-cols-6 items-center gap-4'>
+            <Label htmlFor='name'>Name</Label>
             <Input
               id='name'
               value={formData.name}
               onChange={handleChange}
-              className='col-span-4'
+              className='col-span-5'
             />
           </div>
-          <div className='grid grid-cols-5 items-center gap-4'>
-            <Label htmlFor='name' className='text-right'>
-              Twitter
-            </Label>
+          <div className='grid grid-cols-6 items-center gap-4'>
+            <Label htmlFor='name'>Twitter</Label>
             <Input
               id='email'
               value={formData.email}
               onChange={handleChange}
-              className='col-span-4'
+              className='col-span-5'
             />
           </div>
-          <div className='grid grid-cols-5 items-center gap-4'>
-            <Label htmlFor='username' className='text-right  leading-5'>
-              Project Link
+          <div className=''>
+            <Label htmlFor='username' className='text-right leading-5'>
+              Project link, or areas of interest
             </Label>
             <Input
               id='link'
               value={formData.link}
               onChange={handleChange}
-              className='col-span-4'
+              className='col-span-4 mt-2'
             />
           </div>
         </div>
