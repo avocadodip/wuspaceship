@@ -38,7 +38,7 @@ export default function About() {
             </CardTitle>
             <CardDescription className='leading-5'>
               from top VCs and founders who have built products, led teams, and
-              raised money.
+              raised rounds.
             </CardDescription>
           </CardHeader>
         </Card>
